@@ -62,7 +62,11 @@ static NSString *const cellIdentifier = @"TableViewCell";
 
 #pragma mark - Search Result Updater
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+    NSString *searchText = searchController.searchBar.text;
+    SearchResultController *searchResultController = (SearchResultController*)searchController.searchResultsController;
     
+    NSPredicate *condition = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", searchText];
+    searchResultController.filteredData = [self.data fetchEntityWithName:@"Task" withCondition:condition withSortCondition:nil withLimit:-1];
 }
 
 #pragma mark - UITableView's Data Source & Delegate

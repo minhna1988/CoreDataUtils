@@ -23,6 +23,15 @@ NSString *const kCellIdentifier = @"TableViewCell";
     [self.tableView registerNib:[UINib nibWithNibName:kCellIdentifier bundle:nil] forCellReuseIdentifier:kCellIdentifier];
 }
 
+- (void)setFilteredData:(NSArray *)filteredData{
+    _filteredData = filteredData;
+    [self.tableView reloadData];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.filteredData.count;
 }
@@ -32,7 +41,7 @@ NSString *const kCellIdentifier = @"TableViewCell";
     
     NSManagedObject *item = self.filteredData[indexPath.row];
     
-    cell.textLabel.text = [item valueForKey:@"task"];
+    cell.textLabel.text = [item valueForKey:@"name"];
     
     return cell;
 }
