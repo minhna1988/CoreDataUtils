@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Swift
+//  SwiftSource
 //
-//  Created by Nguyen Anh Minh on 2/19/16.
+//  Created by Nguyen Anh Minh on 2/22/16.
 //  Copyright © 2016 Minh Nguyen. All rights reserved.
 //
 

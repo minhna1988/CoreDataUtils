@@ -5,6 +5,9 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
+      location = "group:SwiftSource/SwiftSource.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Objective-C/Objective-C.xcodeproj">
    </FileRef>
 </Workspace>
