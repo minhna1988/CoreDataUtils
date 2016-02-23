@@ -73,7 +73,7 @@ class DataUtils: NSObject {
         return NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).last
     }
     
-    // MARK: Common function
+    // MARK: Fetch Entity
     func fetchEntity(name: String!, condition: NSPredicate?, sortCondition: [NSSortDescriptor]?, limit: NSInteger)->[AnyObject]{
         let fetchRequest = NSFetchRequest(entityName: name)
         
@@ -104,6 +104,9 @@ class DataUtils: NSObject {
         
         if (bind != nil){
             let count = result.count - 1
+            if (count == -1){
+                return result
+            }
             for i in 0...count{
                 let object: NSManagedObject = result[i] as! NSManagedObject
                 let instance = NSObject.fromClassName(bind!)
@@ -117,6 +120,7 @@ class DataUtils: NSObject {
         return result
     }
     
+    // MARK: Update Entity
     func updateEntity(name: String!, condition: NSPredicate?, values: [String:AnyObject])->Bool{
         var entity: NSManagedObject? = nil
         
@@ -133,6 +137,7 @@ class DataUtils: NSObject {
         return self.save()
     }
     
+    // MARK: Delete Entity
     func deleteEntity(name: String!, condition: NSPredicate?)->Bool{
         let existingObject = self.fetchEntity(name, condition: condition, sortCondition: nil, limit: -1)
         
@@ -143,6 +148,7 @@ class DataUtils: NSObject {
         return self.save()
     }
     
+    // MARK: Save
     func save()->Bool{
         if (self.managedObjectContext != nil){
             do {

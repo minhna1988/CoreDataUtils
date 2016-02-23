@@ -34,15 +34,15 @@ static NSString *const cellIdentifier = @"TableViewCell";
     [super viewDidLoad];
     
     self.searchResultController = [[SearchResultController alloc] init];
+    
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultController];
     self.searchController.searchResultsUpdater = self;
-    [self.searchController.searchBar sizeToFit];
-    self.tableView.tableHeaderView = self.searchController.searchBar;
-    
-    self.searchResultController.tableView.delegate = self;
     self.searchController.delegate = self;
-    self.searchController.dimsBackgroundDuringPresentation = NO; // default is YES
+    self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.searchBar.delegate = self;
+    [self.searchController.searchBar sizeToFit];
+    
+    self.tableView.tableHeaderView = self.searchController.searchBar;
     
     self.data = [DataUtils getInstance];
 

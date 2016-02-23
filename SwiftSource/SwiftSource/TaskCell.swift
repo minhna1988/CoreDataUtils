@@ -31,7 +31,7 @@ class TaskCell: UITableViewCell, UITextFieldDelegate {
             self.addButton.enabled = false
         } else {
             self.inputTextField.text = data.name
-            self.inputTextField.borderStyle = UITextBorderStyle.RoundedRect
+            self.inputTextField.borderStyle = UITextBorderStyle.None
             
             self.addButton.setTitle("Delete", forState: UIControlState.Normal)
             self.addButton.tag = ActionStyle.Delete.rawValue

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TaskCellDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TaskCellDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -16,20 +16,43 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private let data: DataUtils = DataUtils.getInstance
     private var dataList: [Task] = [Task]()
     
+    private var searchResultController: SearchResultController! = nil
+    private var searchController: UISearchController! = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.dataList = self.data.fetchEntity("Task", condition: nil, sortCondition: nil, limit: -1, bind: "Task") as! [Task]
-        print("\(self.dataList)")
         self.dataList.append(Task())
         self.tableView.registerNib(UINib(nibName: cellIndentifier, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: cellIndentifier)
+        
+        self.searchResultController = SearchResultController()
+        
+        self.searchController = UISearchController(searchResultsController: self.searchResultController)
+        self.searchController.delegate = self
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = true
+        self.searchController.searchBar.delegate = self
+        self.searchController.searchBar.sizeToFit()
+        
+        self.tableView.tableHeaderView = self.searchController.searchBar
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
+    // MARK: UISearchController update
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchText = searchController.searchBar.text
+        
+        let condition = NSPredicate(format: "name CONTAINS[cd] %@", searchText!)
+        
+        let controller = searchController.searchResultsController as! SearchResultController!
+        controller.filtedData = self.data.fetchEntity("Task", condition: condition, sortCondition: nil, limit: -1, bind: "Task") as! [Task]
+    }
+    
+    // MARK: UITabelView's Delegate and DataSource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -49,6 +72,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    // MARK: UITableViewCell delegate
     func taskCell(cell: TaskCell, didTapButton sender: UIButton) {
         
         let action = TaskCell.ActionStyle(rawValue: sender.tag)
