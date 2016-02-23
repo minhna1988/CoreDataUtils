@@ -10,6 +10,6 @@ How To Get Started
 - Download the project.
 - Copy DataUtils class to your project.
 - You should create the xcdatamodelid first.
-- In AppDelegate, didFinishLaunchingWithOptions function, we call function to create CoreData: [DataUtils installDatabaseWithName:<xcdatamodelid's name>]
+- In AppDelegate, didFinishLaunchingWithOptions function, call function to create CoreData: [DataUtils installDatabaseWithName:<xcdatamodelid's name>]
 
 Happy codings
