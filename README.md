@@ -12,4 +12,4 @@ How To Get Started
 - You should create the xcdatamodelid first.
 - In AppDelegate, didFinishLaunchingWithOptions function, call function to create CoreData: [DataUtils installDatabaseWithName:<xcdatamodelid's name>]
 
-Happy codings
+-----------------------------------------
