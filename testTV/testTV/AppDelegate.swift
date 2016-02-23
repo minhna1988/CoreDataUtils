@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  SwiftSource
+//  testTV
 //
-//  Created by Nguyen Anh Minh on 2/22/16.
+//  Created by Nguyen Anh Minh on 2/23/16.
 //  Copyright © 2016 Minh Nguyen. All rights reserved.
 //
 
@@ -16,9 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        DataUtils.installDatabase("TestModel");
-        
         return true
     }
 

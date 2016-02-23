@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E73FC90F1C7C0F4D0004691E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FC90E1C7C0F4D0004691E /* Task.swift */; };
+		E73FC9111C7C10960004691E /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FC9101C7C10960004691E /* TaskCell.swift */; };
+		E73FC9131C7C119F0004691E /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73FC9121C7C119F0004691E /* TaskCell.xib */; };
+		E73FC9191C7C1ECB0004691E /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E73FC9171C7C1ECB0004691E /* TestModel.xcdatamodeld */; };
 		E750558A1C7B17F900A540F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75055891C7B17F900A540F2 /* AppDelegate.swift */; };
 		E750558C1C7B17F900A540F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E750558B1C7B17F900A540F2 /* ViewController.swift */; };
 		E750558F1C7B17F900A540F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E750558D1C7B17F900A540F2 /* Main.storyboard */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E73FC90E1C7C0F4D0004691E /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		E73FC9101C7C10960004691E /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		E73FC9121C7C119F0004691E /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		E73FC9181C7C1ECB0004691E /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		E75055861C7B17F900A540F2 /* SwiftSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75055891C7B17F900A540F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E750558B1C7B17F900A540F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +64,8 @@
 		E75055881C7B17F900A540F2 /* SwiftSource */ = {
 			isa = PBXGroup;
 			children = (
+				E73FC9171C7C1ECB0004691E /* TestModel.xcdatamodeld */,
+				E73FC90E1C7C0F4D0004691E /* Task.swift */,
 				E75055891C7B17F900A540F2 /* AppDelegate.swift */,
 				E750558B1C7B17F900A540F2 /* ViewController.swift */,
 				E750558D1C7B17F900A540F2 /* Main.storyboard */,
@@ -63,6 +73,8 @@
 				E75055921C7B17F900A540F2 /* LaunchScreen.storyboard */,
 				E75055951C7B17F900A540F2 /* Info.plist */,
 				E750559B1C7B18DE00A540F2 /* DataUtils.swift */,
+				E73FC9101C7C10960004691E /* TaskCell.swift */,
+				E73FC9121C7C119F0004691E /* TaskCell.xib */,
 			);
 			path = SwiftSource;
 			sourceTree = "<group>";
@@ -125,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73FC9131C7C119F0004691E /* TaskCell.xib in Resources */,
 				E75055941C7B17F900A540F2 /* LaunchScreen.storyboard in Resources */,
 				E75055911C7B17F900A540F2 /* Assets.xcassets in Resources */,
 				E750558F1C7B17F900A540F2 /* Main.storyboard in Resources */,
@@ -138,9 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73FC90F1C7C0F4D0004691E /* Task.swift in Sources */,
 				E750558C1C7B17F900A540F2 /* ViewController.swift in Sources */,
 				E750559C1C7B18DE00A540F2 /* DataUtils.swift in Sources */,
+				E73FC9191C7C1ECB0004691E /* TestModel.xcdatamodeld in Sources */,
 				E750558A1C7B17F900A540F2 /* AppDelegate.swift in Sources */,
+				E73FC9111C7C10960004691E /* TaskCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +270,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftSource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = non.com.vn.SwiftSource;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -265,6 +282,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftSource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = non.com.vn.SwiftSource;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,6 +311,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E73FC9171C7C1ECB0004691E /* TestModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E73FC9181C7C1ECB0004691E /* TestModel.xcdatamodel */,
+			);
+			currentVersion = E73FC9181C7C1ECB0004691E /* TestModel.xcdatamodel */;
+			path = TestModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E750557E1C7B17F900A540F2 /* Project object */;
 }

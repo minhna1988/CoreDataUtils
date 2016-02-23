@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TaskCell" id="JGR-Ct-a7T" customClass="TaskCell" customModule="SwiftSource" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JGR-Ct-a7T" id="Mgx-Ml-YoZ">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsB-gN-EIW">
+                        <rect key="frame" x="5" y="7" width="245" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="textFieldEditingChange:" destination="JGR-Ct-a7T" eventType="editingChanged" id="EYA-Qf-c7a"/>
+                            <outlet property="delegate" destination="JGR-Ct-a7T" id="wqM-ZB-kPf"/>
+                        </connections>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bo-Dl-wCT">
+                        <rect key="frame" x="250" y="0.0" width="70" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="Qft-F0-ORH"/>
+                        </constraints>
+                        <state key="normal" title="Add"/>
+                        <connections>
+                            <action selector="didTapAddButton:" destination="JGR-Ct-a7T" eventType="touchUpInside" id="1Yr-a4-uia"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hsB-gN-EIW" firstAttribute="leading" secondItem="Mgx-Ml-YoZ" secondAttribute="leading" constant="5" id="0AI-HF-KsF"/>
+                    <constraint firstItem="5Bo-Dl-wCT" firstAttribute="top" secondItem="Mgx-Ml-YoZ" secondAttribute="top" id="A3R-rV-KMc"/>
+                    <constraint firstItem="hsB-gN-EIW" firstAttribute="top" secondItem="Mgx-Ml-YoZ" secondAttribute="top" constant="7" id="EH4-Jg-1q2"/>
+                    <constraint firstAttribute="trailing" secondItem="5Bo-Dl-wCT" secondAttribute="trailing" id="Jw0-O3-UUM"/>
+                    <constraint firstItem="5Bo-Dl-wCT" firstAttribute="leading" secondItem="hsB-gN-EIW" secondAttribute="trailing" id="SXz-Hi-FTe"/>
+                    <constraint firstAttribute="bottom" secondItem="hsB-gN-EIW" secondAttribute="bottom" constant="6" id="u7t-0o-v4l"/>
+                    <constraint firstAttribute="bottom" secondItem="5Bo-Dl-wCT" secondAttribute="bottom" id="xJv-KT-3W7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addButton" destination="5Bo-Dl-wCT" id="E4S-7k-n0Z"/>
+                <outlet property="inputTextField" destination="hsB-gN-EIW" id="Cmc-s5-DFv"/>
+            </connections>
+            <point key="canvasLocation" x="557" y="177"/>
+        </tableViewCell>
+    </objects>
+</document>
